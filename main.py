@@ -76,13 +76,12 @@ def coffe_machine():
     #          Если денег хватает, то цена на кофе вычитается из суммы денег, а сумма добавляется в
     #          Переменную report. Сдача должна выдаваться
 
-    # CASH = check_money(CASH, QUESTION)
     if CASH < MENU[QUESTION]['cost']:
         print(f"Нужно больше денег. {CASH} ₽ возвращены")
         resources['money'] -= CASH
     else:
         print(f"Твоя сдача: {CASH-MENU[QUESTION]['cost']} ₽")
-        resources['money'] += CASH-MENU[QUESTION]['cost']
+        resources['money'] += MENU[QUESTION]['cost']
 
         # TODO: 7. Сделать кофе.
         #          Если денег хватает и ресурсы на месте, тогда ресурсы вычитаются из переменной report
