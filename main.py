@@ -43,16 +43,16 @@ def insert_cash():
 
 
 # функция по проверке необходимых внесенных средств
-def check_money(money, coffee):
-    global MENU, resources
-    local_price = MENU[coffee]['cost']
-    if local_price > resources['money']:
-        print(f"Нужно больше денег. {resources['money']}₽ возвращены")
-        resources['money'] = 0
-    else:
-        money -= local_price
-        resources['money'] -= local_price
-    return money
+# def check_money(money, coffee):
+#     global MENU, resources
+#     local_price = MENU[coffee]['cost']
+#     if local_price > resources['money']:
+#         print(f"Нужно больше денег. {resources['money']}₽ возвращены")
+#         resources['money'] = 0
+#     else:
+#         money -= local_price
+#         resources['money'] -= local_price
+#     return money
 
 
 # функция кофе машины
@@ -69,7 +69,7 @@ def coffe_machine():
 
     if CASH < MENU[QUESTION]['cost']:
         print(f"Нужно больше денег. {CASH} ₽ возвращены")
-        resources['money'] -= CASH
+        # resources['money'] -= CASH
     else:
         print(f"Твоя сдача: {CASH-MENU[QUESTION]['cost']} ₽")
         resources['money'] += MENU[QUESTION]['cost']
